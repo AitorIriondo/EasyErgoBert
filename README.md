@@ -104,6 +104,27 @@ blender --background --python animate_3d_fixed.py -- \
     --height 1.80
 ```
 
+### Export to Y-Bot (Mixamo Character)
+
+For a more realistic animation with a humanoid character, use the Y-Bot export:
+
+```bash
+# Windows - Export with Y-Bot
+"C:\Program Files\Blender Foundation\Blender 5.0\blender.exe" --background \
+    --python animate_ybot_fixed.py -- \
+    --input output/video_poses.pkl \
+    --ybot models/Y_Bot.fbx \
+    --output output/ybot_animated.fbx
+
+# Linux/Mac
+blender --background --python animate_ybot_fixed.py -- \
+    --input output/video_poses.pkl \
+    --ybot models/Y_Bot.fbx \
+    --output output/ybot_animated.fbx
+```
+
+**Note**: You need to download the Y-Bot FBX from [Mixamo](https://www.mixamo.com/) and place it in `models/Y_Bot.fbx`. The script maps H36M joints to Mixamo armature bones.
+
 ## Output Files
 
 | File | Description |
@@ -119,7 +140,8 @@ blender --background --python animate_3d_fixed.py -- \
 ```
 EasyErgoBert/
 ├── process_video_fixed.py    # Main pipeline script (USE THIS)
-├── animate_3d_fixed.py       # Blender FBX export script
+├── animate_3d_fixed.py       # Blender FBX export (skeleton)
+├── animate_ybot_fixed.py     # Blender FBX export (Y-Bot character)
 ├── download_pose3d_checkpoint.py  # Checkpoint verification
 ├── requirements.txt          # Python dependencies
 ├── MotionBERT/              # MotionBERT (clone separately)
