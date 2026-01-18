@@ -1,0 +1,26 @@
+# EasyErgoBert Requirements
+# Install with: pip install -r requirements.txt
+#
+# Note: PyTorch must be installed separately with CUDA support:
+# pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128
+
+# Core dependencies
+numpy>=1.21.0
+opencv-python>=4.5.0
+scipy>=1.7.0
+tqdm>=4.60.0
+
+# YOLOv8 for 2D pose detection
+ultralytics>=8.0.0
+
+# MotionBERT dependencies
+einops>=0.4.0
+timm>=0.6.0
+easydict>=1.9
+PyYAML>=6.0
+
+# Visualization (optional)
+matplotlib>=3.4.0
+
+# For pickle data loading
+# (included in Python standard library)
